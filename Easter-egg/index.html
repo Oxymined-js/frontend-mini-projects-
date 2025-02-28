@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Easter Egg Website</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #333;
+      font-family: Arial, sans-serif;
+      transition: background-color 1s, color 1s;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 100px auto;
+      text-align: center;
+      padding: 20px;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-weight: bold;
+      transition: transform 0.3s ease-in-out;
+    }
+    .shake {
+      animation: shake 0.5s;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+    }
+    .progress-bar {
+      width: 80%;
+      height: 20px;
+      background-color: #ddd;
+      border-radius: 10px;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+    .progress {
+      height: 100%;
+      width: 0;
+      background-color: #4caf50;
+      transition: width 0.5s ease-in-out;
+    }
+    .reset-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Selamat Datang di Website Saya</h1>
+    <p>Ketikkan kalimat rahasia pada kotak di bawah (tekan Enter untuk mengirim):</p>
+    <input type="text" id="secretInput" placeholder="search">
+    <div class="progress-bar"><div class="progress" id="progress"></div></div>
+    <p id="feedback"></p>
+  </div>
+
+  <audio id="easterAudio" src="theme.mp3"></audio>
+
+  <script>
+    let correctSentences = [
+      "i am the bone of my sword",
+      "steel is my body and fire is my blood",
+      "i have created over a thousand blades",
+      "unknown to death",
+      "nor known to life",
+      "have withstood pain to create many weapons",
+      "yet, those hands will never hold anything",
+      "so as i pray, unlimited blade works"
+    ];
+
+    let currentIndex = 0; // Tidak ada penyimpanan progress
+    const inputField = document.getElementById('secretInput');
+    const feedback = document.getElementById('feedback');
+    const progress = document.getElementById('progress');
+    const audio = document.getElementById('easterAudio');
+
+    inputField.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        const userInput = inputField.value.trim().toLowerCase();
+        const correctAnswer = correctSentences[currentIndex].trim().toLowerCase();
+
+        if (userInput === correctAnswer) {
+          currentIndex++;
+          feedback.textContent = `You search anything? (${currentIndex}/8)`;
+          feedback.classList.remove('shake');
+          updateProgress();
+          if (currentIndex === correctSentences.length) {
+            triggerEasterEgg();
+          }
+        } else {
+          feedback.textContent = "You search anything?";
+          feedback.classList.add('shake');
+          currentIndex = 0;
+          updateProgress();
+        }
+        inputField.value = "";
+      }
+    });
+
+    function updateProgress() {
+      progress.style.width = (currentIndex / correctSentences.length) * 100 + "%";
+    }
+
+    function triggerEasterEgg() {
+      document.body.style.backgroundImage = "url('background.jpg')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundAttachment = "fixed";
+      document.body.style.color = "#f0f0f0";
+      feedback.textContent = "Found You";
+      audio.play().catch(err => console.log("Pemutaran audio gagal: ", err));
+    }
+  </script>
+</body>
+</html>

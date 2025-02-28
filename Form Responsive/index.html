@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: sans-serif;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type=text], input[type=email] {
+        padding-left: 10px;
+    }
+
+    .container {
+        border: 1px solid red;
+        padding: 20px;
+    }
+
+    .username {
+        display: flex;
+    }
+
+    .username label {
+        display: block;
+        margin-bottom: 3px;
+    }
+
+    .username input {
+        height: 33px;
+        font-size: 15px;
+        width: 150px;
+        outline: none;
+        border-radius: 4px;
+        border: 1px solid black;
+    }
+
+    .username .first_name {
+        margin-right: 20px;
+    }
+
+    .email {
+        margin-top: 15px;
+    }
+
+    .email label {
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .email input {
+        height: 30px;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid black;
+        outline: none;
+    }
+
+    .city {
+        margin-top: 15px;
+    }
+
+    .city p {
+        margin-bottom: 5px;
+    }
+
+    .city select {
+        width: 100%;
+        height: 30px;
+        border-radius: 4px;
+        outline: none;
+        padding: 5px;
+    }
+
+    .recomended {
+        margin-top: 20px;
+    }
+
+    .recomended {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .recomended label {
+        margin-left: 5px;
+    }
+
+    .masukkan {
+        margin-top: 15px;
+    }
+
+    .masukkan label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .masukkan textarea {
+        width: 100%;
+        height: 100px;
+        padding: 10px;
+        border-radius: 4px;
+        outline: none;
+        resize: none;
+    }
+
+    .button {
+        margin-top: 15px;
+    }
+
+    .button input {
+        width: 100%;
+        height: 35px;
+        border-radius: 4px;
+        border: none;
+        background: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+</style>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="username">
+                <div>
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" id="first_name" class="first_name" maxlength="15">
+                </div>
+                <div>
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="last_name" id="last-name" max="12">
+                </div>
+            </div>
+
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="city">
+                <p>City</p>
+                <select name="city" id="city">
+                    <option value="Semarang">Semarang</option>
+                    <option value="Yogyakarta">Yogyakarta</option>
+                    <option value="Jakarta">Jakarta</option>
+                    <option value="Sumedang">Sumedang</option>
+                </select>
+            </div>
+
+            <div class="recomended">
+                <div>
+                    <input type="radio" name="rekomendasi" id="recomended">
+                    <label for="recomended">Tentu</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="rekomendasi" id="recomended">
+                    <label for="recomended">Tentu</label>
+                </div>
+                
+                <div>
+                    <input type="radio" name="rekomendasi" id="recomended">
+                    <label for="recomended">Tentu</label>
+                </div>
+            </div>
+
+            <div class="masukkan">
+                <label for="masukan">Masukan</label>
+                <textarea name="masukan" id="masukan" placeholder="masukan"></textarea>
+            </div>
+
+            <div class="button">
+                <input type="button" value="submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

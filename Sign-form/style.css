@@ -1,0 +1,141 @@
+* {
+    font-family: Helvetica, Arial;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body::before {
+    content:"";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));
+    -webkit-background: linear-gradient(225deg, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));
+    -moz-background: linear-gradient(225deg, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));
+}
+
+form {
+    width: 350px;
+    border: 2px solid rgb(230, 227, 227);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+    z-index: 5;
+}
+
+input {
+    background-color: rgb(225, 214, 214);
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    outline: none;
+    padding: 5px;
+}
+
+form .name{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+form .name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+form .name .first-name input {
+    height: 23px;
+    outline: none;
+}
+
+form .name .last-name input {
+    height: 23px;
+    outline: none;
+}
+
+form .number {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+form .number p {
+    margin-left: 5px;
+    margin-top: 15px;
+}
+
+form .number input {
+    height: 23px;
+    width: 300px;
+    margin-left: 5px;
+}
+
+form .email {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+form .email p {
+    margin-left: 5px;
+    margin-top: 15px;
+}
+
+form .email input {
+    height: 23px;
+    margin-left: 5px;
+    width: 270px;
+}
+
+form .agreement {
+    margin-top: 10px;
+    display: flex;
+}
+
+form .agreement input {
+    background-color: lightblue;
+}
+
+form .agreement label {
+    font-size: 12px;
+    padding-left: 5px;
+}
+
+form .submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+form .submit button {
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}

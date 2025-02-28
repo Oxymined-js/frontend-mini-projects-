@@ -1,0 +1,51 @@
+* {
+    font-family: Arial;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+body::before {
+    content:"";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(img/background.jpg) no-repeat center/cover #000 ;
+    z-index: -1;
+}
+
+body .h1 {
+    background-color: color;
+    color: black;
+}
+
+form {
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    width: 400px;
+    text-align: center;
+    background-color: white;
+}
+
+form h2 {
+    color: blue;
+}
+
+form .kesan {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+form .from {
+}

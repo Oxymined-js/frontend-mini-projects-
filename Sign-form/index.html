@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="" method="post">
+        <label for="name" class="name">
+            <div class="first-name">
+                <p>
+                    Nama Depan
+                </p>
+                <input type="text" id="name" name="first-name" maxlength="30">
+            </div>
+            <div class="last-name">
+                <p>
+                    Nama Belakang
+                </p>
+                <input type="text" id="name" name="last-name" maxlength="30">
+            </div>
+        </label>
+        <label for="number" class="number">
+            <p>
+                Nomor Telepon
+            </p>
+            <input type="text" inputmode="numeric" id="number" name="number">
+        </label>
+        <label for="email" class="email">
+            <p>
+                Email
+            </p>
+            <input type="email" id="email" name="user-email">
+        </label>
+        <div class="agreement">
+        <input type="checkbox" name="user-agreement" id="agreement" value="agree">
+        <label for="agreement">
+            Saya menyetujui <a href="#">kebijakan</a> privasi dan syarat & ketentuan yang berlaku, serta bersedia menerima informasi terkait layanan melalui email, SMS, atau sarana komunikasi lainnya.
+        </label>
+        </div>
+        <div class="submit" for="submit">
+            <button>Submit</button>
+        </div>
+    </form>
+</body>
+</html>
